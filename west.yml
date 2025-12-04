@@ -1,0 +1,13 @@
+manifest:
+  projects:
+    # 1. The "Parent" Manifest
+    # This brings in NCS v3.1.1, test-company-sdk, and test-modem-source automatically.
+    - name: test-premium-manifest
+      url: https://github.com/V1incentC/test-premium-manifest
+      revision: main
+      import: true 
+
+  self:
+    # 2. Where do I sit?
+    # When CI runs 'west init', it will place this repo into a folder named 'application'
+    path: application

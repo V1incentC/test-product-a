@@ -1,0 +1,14 @@
+name: Build Product A
+
+on: [push, pull_request]
+
+jobs:
+  build-firmware:
+    # Adjust this path to point to your premium manifest repo
+    uses: V1incentC/test-premium-manifest/.github/workflows/reusable-build.yml@main
+    with:
+      # We use QEMU for the test build since we know it works in your Docker image
+      # In real life, this would be 'nrf9160dk_nrf9160_ns'
+      board: nrf9160dk_nrf9160_ns 
+      app-dir: application
+    secrets: inherit
